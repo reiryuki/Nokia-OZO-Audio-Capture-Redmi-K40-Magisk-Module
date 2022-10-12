@@ -7,6 +7,7 @@
 ## Descriptions
 - Audio quality enhancements for audio/video recordings ported from Xiaomi Redmi K40 (alioth) and integrated as a Magisk Module for all supported and rooted devices with Magisk
 - Pre process type soundfx
+- There is no user interface
 - Any audio/video recorder app must have android.permission.MODIFY_AUDIO_SETTINGS to be able to connect to this soundfx
 
 ## Sources
