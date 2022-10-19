@@ -18,7 +18,7 @@ fi
 # mount
 NAME="*audio*effects*.conf -o -name *audio*effects*.xml"
 if [ -d $AML ] && [ ! -f $AML/disable ]\
-&& find $AML/system/ -type f; then
+&& find $AML/system/vendor -type f -name $NAME; then
   DIR=$AML/system/vendor
 else
   DIR=$MODPATH/system/vendor

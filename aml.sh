@@ -14,7 +14,6 @@ if [ -d $DIR ]; then
 else
   LIBPATH="\/system\/lib\/soundfx"
 fi
-LIBPATH="\/vendor\/lib\/soundfx"
 MODAEC=`find $MODPATH/system -type f -name *audio*effects*.conf`
 MODAEX=`find $MODPATH/system -type f -name *audio*effects*.xml`
 

@@ -1,6 +1,6 @@
 id=OZOAudioCapture
 name=Nokia OZO Audio Capture Redmi K40
-version=v0.1-beta.1
+version=v0.1
 versionCode=1
 author=Rei Ryuki the Fixer
 description=Pre Process type soundfx ported from Redmi K40 (alioth) for any Android version. Enhance your audio quality in audio/video recordings.
