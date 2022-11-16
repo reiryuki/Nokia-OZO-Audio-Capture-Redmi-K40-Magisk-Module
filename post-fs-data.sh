@@ -1,5 +1,6 @@
 mount -o rw,remount /data
 MODPATH=${0%/*}
+API=`getprop ro.build.version.sdk`
 AML=/data/adb/modules/aml
 ACDB=/data/adb/modules/acdb
 
