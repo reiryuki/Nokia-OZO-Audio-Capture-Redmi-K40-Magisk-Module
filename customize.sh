@@ -1,11 +1,27 @@
-ui_print " "
+# space
+if [ "$BOOTMODE" == true ]; then
+  ui_print " "
+fi
 
 # magisk
 if [ -d /sbin/.magisk ]; then
   MAGISKTMP=/sbin/.magisk
 else
-  MAGISKTMP=`find /dev -mindepth 2 -maxdepth 2 -type d -name .magisk`
+  MAGISKTMP=`realpath /dev/*/.magisk`
 fi
+
+# path
+if [ "$BOOTMODE" == true ]; then
+  MIRROR=$MAGISKTMP/mirror
+else
+  MIRROR=
+fi
+SYSTEM=`realpath $MIRROR/system`
+PRODUCT=`realpath $MIRROR/product`
+VENDOR=`realpath $MIRROR/vendor`
+SYSTEM_EXT=`realpath $MIRROR/system/system_ext`
+ODM=`realpath /odm`
+MY_PRODUCT=`realpath /my_product`
 
 # optionals
 OPTIONALS=/sdcard/optionals.prop
@@ -109,39 +125,8 @@ elif [ -d $DIR ] && ! grep -Eq "$MODNAME" $FILE; then
   ui_print " "
 fi
 
-# function
-permissive() {
-SELINUX=`getenforce`
-if [ "$SELINUX" == Enforcing ]; then
-  setenforce 0
-  SELINUX=`getenforce`
-  if [ "$SELINUX" == Enforcing ]; then
-    abort "  ! Your device can't be turned to Permissive state"
-  fi
-  setenforce 1
-fi
-sed -i '1i\
-SELINUX=`getenforce`\
-if [ "$SELINUX" == Enforcing ]; then\
-  setenforce 0\
-fi\' $MODPATH/post-fs-data.sh
-}
-
-# permissive
-if [ "`grep_prop permissive.mode $OPTIONALS`" == 1 ]; then
-  ui_print "- Using permissive method"
-  rm -f $MODPATH/sepolicy.rule
-  permissive
-  ui_print " "
-fi
-
 # directory
-if [ $BOOTMODE == true ]; then
-  DIR=$MAGISKTMP/mirror/vendor/lib/soundfx
-else
-  DIR=/vendor/lib/soundfx
-fi
-if [ ! -d $DIR ]; then
+if [ ! -d $VENDOR/lib/soundfx ]; then
   ui_print "- /vendor/lib/soundfx is not suported."
   ui_print "  Moving to /system/lib/soundfx..."
   mv -f $MODPATH/system/vendor/lib* $MODPATH/system
@@ -149,12 +134,14 @@ if [ ! -d $DIR ]; then
 fi
 
 # permission
-ui_print "- Setting permission..."
-DIR=`find $MODPATH/system/vendor -type d`
-for DIRS in $DIR; do
-  chown 0.2000 $DIRS
-done
-ui_print " "
+if [ "$API" -ge 26 ]; then
+  ui_print "- Setting permission..."
+  DIR=`find $MODPATH/system/vendor -type d`
+  for DIRS in $DIR; do
+    chown 0.2000 $DIRS
+  done
+  ui_print " "
+fi
 
 
 
