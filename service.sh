@@ -1,59 +1,75 @@
 MODPATH=${0%/*}
 API=`getprop ro.build.version.sdk`
-AML=/data/adb/modules/aml
 
-# debug
+# log
 exec 2>$MODPATH/debug.log
 set -x
+
+# restart
+if [ "$API" -ge 24 ]; then
+  SERVER=audioserver
+else
+  SERVER=mediaserver
+fi
+PID=`pidof $SERVER`
+if [ "$PID" ]; then
+  killall $SERVER
+fi
 
 # wait
 sleep 20
 
 # aml fix
-DIR=$AML/system/vendor/odm/etc
-if [ -d $DIR ] && [ ! -f $AML/disable ]; then
+AML=/data/adb/modules/aml
+if [ -L $AML/system/vendor ]\
+&& [ -d $AML/vendor ]; then
+  DIR=$AML/vendor/odm/etc
+else
+  DIR=$AML/system/vendor/odm/etc
+fi
+if [ "$API" -ge 26 ] && [ -d $DIR ]\
+&& [ ! -f $AML/disable ]; then
   chcon -R u:object_r:vendor_configs_file:s0 $DIR
 fi
-
-# mount
-NAME="*audio*effects*.conf -o -name *audio*effects*.xml"
-if [ -d $AML ] && [ ! -f $AML/disable ]\
-&& find $AML/system/vendor -type f -name $NAME; then
+AUD=`grep AUD= $MODPATH/copy.sh | sed -e 's|AUD=||g' -e 's|"||g'`
+if [ -L $AML/system/vendor ]\
+&& [ -d $AML/vendor ]; then
+  DIR=$AML/vendor
+else
   DIR=$AML/system/vendor
-else
-  DIR=$MODPATH/system/vendor
 fi
-FILE=`find $DIR/etc -maxdepth 1 -type f -name $NAME`
-if [ "`realpath /odm/etc`" == /odm/etc ] && [ "$FILE" ]; then
-  for i in $FILE; do
-    j="/odm$(echo $i | sed "s|$DIR||")"
-    if [ -f $j ]; then
-      umount $j
-      mount -o bind $i $j
-    fi
-  done
-fi
-if [ -d /my_product/etc ] && [ "$FILE" ]; then
-  for i in $FILE; do
-    j="/my_product$(echo $i | sed "s|$DIR||")"
-    if [ -f $j ]; then
-      umount $j
-      mount -o bind $i $j
-    fi
-  done
+FILES=`find $DIR -type f -name $AUD`
+if [ -d $AML ] && [ ! -f $AML/disable ]\
+&& find $DIR -type f -name $AUD; then
+  if ! grep '/odm' $AML/post-fs-data.sh && [ -d /odm ]\
+  && [ "`realpath /odm/etc`" == /odm/etc ]; then
+    for FILE in $FILES; do
+      DES=/odm`echo $FILE | sed "s|$DIR||g"`
+      if [ -f $DES ]; then
+        umount $DES
+        mount -o bind $FILE $DES
+      fi
+    done
+  fi
+  if ! grep '/my_product' $AML/post-fs-data.sh\
+  && [ -d /my_product ]; then
+    for FILE in $FILES; do
+      DES=/my_product`echo $FILE | sed "s|$DIR||g"`
+      if [ -f $DES ]; then
+        umount $DES
+        mount -o bind $FILE $DES
+      fi
+    done
+  fi
 fi
 
-# restart
-if [ "$API" -ge 24 ]; then
-  PID=`pidof audioserver`
-  if [ "$PID" ]; then
-    killall audioserver
-  fi
-else
-  PID=`pidof mediaserver`
-  if [ "$PID" ]; then
-    killall mediaserver
-  fi
-fi
+
+
+
+
+
+
+
+
 
 

@@ -2,7 +2,7 @@
 
 ## DISCLAIMER
 - Nokia OZO Audio Capture blobs are owned by Nokia™.
-- The MIT license specified here is for the Magisk Module, not for Nokia OZO Audio Capture blobs.
+- The MIT license specified here is for the Magisk Module only, not for Nokia OZO Audio Capture blobs.
 
 ## Descriptions
 - Audio quality enhancements for audio/video recordings ported from Xiaomi Redmi K40 (alioth) and integrated as a Magisk Module for all supported and rooted devices with Magisk
@@ -11,18 +11,18 @@
 
 ## Sources
 - https://dumps.tadiphone.dev/dumps/redmi/alioth qssi-user-12-SKQ1.211006.001-V13.0.3.0.SKHEUXM-release-keys
-- ozoplaysdk.license: https://github.com/something6969/vendor_nokia_TheThing/tree/e5ae540fba9441978a03af9577a89ae50b882b6b
-- ozosdk.license: https://github.com/something6969/vendor_nokia_TheThing/tree/e5ae540fba9441978a03af9577a89ae50b882b6b
+- ozoplaysdk.license: https://github.com/something6969/vendor_nokia_TheThing
+- ozosdk.license: https://github.com/something6969/vendor_nokia_TheThing
 
 ## Screenshots
 - https://t.me/androidryukimodsdiscussions/113355
 
 ## Requirements
-- Magisk installed
+- Magisk or KernelSU installed
 
 ## Installation Guide & Download Link
-- Install this module https://www.pling.com/p/1918952/ via Magisk Manager or Recovery
-- Install AML Magisk Module https://zackptg5.com/android.php#aml only if using any other audio mod module
+- Install this module https://www.pling.com/p/1918952/ via Magisk app or KernelSU app or Recovery if Magisk installed
+- Install AML Magisk Module https://t.me/androidryukimodsdiscussions/29836 only if using any other audio mod module
 - Reboot
 
 ## Optionals
