@@ -11,8 +11,7 @@
 
 ## Sources
 - https://dumps.tadiphone.dev/dumps/redmi/alioth qssi-user-12-SKQ1.211006.001-V13.0.3.0.SKHEUXM-release-keys
-- ozoplaysdk.license: https://github.com/something6969/vendor_nokia_TheThing
-- ozosdk.license: https://github.com/something6969/vendor_nokia_TheThing
+- ozosdk.license & ozoplaysdk.license: https://github.com/something6969/vendor_nokia_TheThing
 
 ## Screenshots
 - https://t.me/androidryukimodsdiscussions/113355
@@ -26,11 +25,11 @@
 - Reboot
 
 ## Optionals
-- https://t.me/androidryukimodsdiscussions/60861
-- https://t.me/androidryukimodsdiscussions/26764
+- Global: https://t.me/androidryukimodsdiscussions/60861
+- Stream: https://t.me/androidryukimodsdiscussions/26764
 
 ## Troubleshootings
-- https://t.me/androidryukimodsdiscussions/29836
+- Global: https://t.me/androidryukimodsdiscussions/29836
 
 ## Support & Bug Report
 - https://t.me/androidryukimodsdiscussions/2618
