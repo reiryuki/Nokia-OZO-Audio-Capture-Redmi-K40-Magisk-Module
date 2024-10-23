@@ -12,6 +12,7 @@
 ## Sources
 - https://dumps.tadiphone.dev/dumps/redmi/alioth qssi-user-12-SKQ1.211006.001-V13.0.3.0.SKHEUXM-release-keys
 - ozosdk.license & ozoplaysdk.license: https://github.com/something6969/vendor_nokia_TheThing
+- libmagiskpolicy.so: Kitsune Mask R6687BB53
 
 ## Screenshots
 - https://t.me/androidryukimodsdiscussions/113355
