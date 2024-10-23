@@ -6,7 +6,7 @@
 
 ## Descriptions
 - Audio quality enhancement for audio/video recordings ported from Xiaomi Redmi K40 (alioth) and integrated as a Magisk Module for all supported and rooted devices with Magisk
-- Pre process type soundfx
+- Pre process type sound effect
 - There is no user interface
 
 ## Sources
@@ -17,27 +17,24 @@
 - https://t.me/androidryukimodsdiscussions/113355
 
 ## Requirements
+- arm64-v8a or armeabi-v7a architecture
 - Magisk or KernelSU installed
 
 ## Installation Guide & Download Link
 - Install this module https://www.pling.com/p/1918952/ via Magisk app or KernelSU app or Recovery if Magisk installed
-- Install AML Magisk Module https://t.me/androidryukimodsdiscussions/29836 only if using any other else audio mod module
+- Install AML Magisk Module https://t.me/ryukinotes/34 only if using any other else audio mod module
 - Reboot
 
 ## Optionals
-- Global: https://t.me/androidryukimodsdiscussions/60861
+- Global: https://t.me/ryukinotes/35
 - Stream: https://t.me/androidryukimodsdiscussions/26764
 
 ## Troubleshootings
-- Global: https://t.me/androidryukimodsdiscussions/29836
+- Global: https://t.me/ryukinotes/34
 
 ## Support & Bug Report
 - https://t.me/androidryukimodsdiscussions/2618
 - If you don't do above, issues will be closed immediately
-
-## Tested on
-- Android 13 AOSP ROM
-- Android 14 LineageOS ROM
 
 ## Credits and Contributors
 - https://t.me/viperatmos
@@ -45,6 +42,6 @@
 - You can contribute ideas about this Magisk Module here: https://t.me/androidappsportdevelopment
 
 ## Sponsors
-- https://t.me/androidryukimodsdiscussions/2619
+- https://t.me/ryukinotes/25
 
 
