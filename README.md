@@ -1,8 +1,8 @@
-# Nokia OZO Audio Capture Redmi K40 Magisk Module
+# OZO Audio Capture Redmi K40 Magisk Module
 
 ## DISCLAIMER
-- Nokia OZO Audio Capture blobs are owned by Nokia™.
-- The MIT license specified here is for the Magisk Module only, not for Nokia OZO Audio Capture blobs.
+- OZO Audio Capture blobs are owned by Nokia™.
+- The MIT license specified here is for the Magisk Module only, not for OZO Audio Capture blobs.
 
 ## Descriptions
 - Audio quality enhancement for audio/video recordings ported from Xiaomi Redmi K40 (alioth) and integrated as a Magisk Module for all supported and rooted devices with Magisk
@@ -18,10 +18,10 @@
 
 ## Requirements
 - arm64-v8a or armeabi-v7a architecture
-- Magisk or KernelSU installed
+- Magisk or Kitsune Mask or KernelSU or Apatch installed
 
 ## Installation Guide & Download Link
-- Install this module https://www.pling.com/p/1918952/ via Magisk app or KernelSU app or Recovery if Magisk installed
+- Install this module https://www.pling.com/p/1918952/ via Magisk app or Kitsune Mask app or KernelSU app or Apatch app or Recovery if Magisk or Kitsune Mask installed
 - Install AML Magisk Module https://t.me/ryukinotes/34 only if using any other else audio mod module
 - Reboot
 
