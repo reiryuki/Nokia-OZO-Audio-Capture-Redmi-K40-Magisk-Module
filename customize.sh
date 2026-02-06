@@ -206,6 +206,7 @@ if [ "$API" -le 25 ]; then
 fi
 
 # run
+MODSYSTEM=/system
 . $MODPATH/copy.sh
 . $MODPATH/.aml.sh
 

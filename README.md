@@ -18,6 +18,7 @@
 
 ## Requirements
 - arm64-v8a or armeabi-v7a architecture
+- HIDL audio service
 - Magisk or Kitsune Mask or KernelSU or Apatch installed
 
 ## Installation Guide & Download Link
